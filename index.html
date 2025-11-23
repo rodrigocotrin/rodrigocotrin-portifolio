@@ -2,187 +2,216 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Rodrigo Cotrin">
-  <meta name="description" content="Portfólio do desenvolvedor Rodrigo Cotrin">
-  <meta name="keywords"
-    content="portfolio, html, front-end, backend, fullstack, mobile, kotlin, desenvolvimento, css, javascript, python">
-  <title>Rodrigo Cotrin</title>
-  <link rel="shortcut icon" href="/assets/rc.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Rodrigo Cotrin | Criação de Sites e Automação na Vila Nova Mazzei</title>
+    <meta name="description" content="Aumente suas vendas com Engenharia Digital. Especialista em Google Meu Negócio, Sites Rápidos e Automação de WhatsApp na Vila Nova Mazzei e Zona Norte de SP.">
+    <meta name="keywords" content="criação de sites vila nova mazzei, google meu negócio zona norte, automação whatsapp, rodrigo cotrin, desenvolvedor web sp">
+    <meta name="author" content="Rodrigo Cotrin">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://rodrigocotrin.com/" />
 
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Rodrigo Cotrin | Engenharia Digital para Negócios Locais">
+    <meta property="og:url" content="https://rodrigocotrin.com/">
+    <meta property="og:image" content="https://rodrigocotrin.com/assets/rc.png"> <meta property="og:description" content="Transformo negócios locais com tecnologia. Sites, Google Maps e Automação.">
+
+    <link rel="shortcut icon" href="/assets/rc.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Rodrigo Cotrin Engenharia Digital",
+      "image": "https://rodrigocotrin.com/assets/foto_rodrigo.jpg",
+      "url": "https://rodrigocotrin.com",
+      "telephone": "+5511988263659", 
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "Neighborhood",
+          "name": "Vila Nova Mazzei"
+        },
+        {
+          "@type": "Neighborhood",
+          "name": "Tucuruvi"
+        },
+        {
+          "@type": "City",
+          "name": "São Paulo"
+        }
+      ],
+      "description": "Especialista em infraestrutura digital para negócios locais. Otimização de Google Meu Negócio, Desenvolvimento de Sites e Automação.",
+      "knowsAbout": ["Software Engineering", "SEO Local", "Web Development", "C#", "Python"]
+    }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav data-menu="suave">
-      <p><a href="#home" title="Início - Rodrigo Cotrin">RC</a></p>
-      <button data-menu="button" aria-controls="menu"></button>
-      <ul data-menu="list" id="menu">
-        <a href="#home">
-          <li>Home</li>
-        </a>
-        <a href="#sobre">
-          <li>Sobre</li>
-        </a>
-        <a href="#experiencia">
-          <li>Experiência</li>
-        </a>
-        <a href="#projetos">
-          <li>Projetos</li>
-        </a>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="principal" id="home">
-      <div class="principal__left">
-        <h1>Rodrigo Cotrin</h1>
-        <span class="principal__sentence"></span>
-        <span class="principal__input-cursor"></span>
-        <h1>Foco em Sistemas de Alto Desempenho e Análise de Dados</h1>
-        <div class="principal__botao">
-          <a href="https://www.linkedin.com/in/rodrigocotrin/" target="_blank">
-            <div class="principal__botao-linkedin">
-              <img src="./assets/linkedin.png" alt="" />
-              <p>LinkedIn</p>
-            </div>
-          </a>
-          <a href="https://github.com/RodrigoCotrin" target="_blank">
-            <div class="principal__botao-github">
-              <img src="./assets/github.png" alt="" />
-              <p>Github</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="principal__right">
-        <img src="./assets/img_main.svg"
-          alt="Ilustração representando uma desenvolvedora sentada na cadeira mexendo no notebook com ambiente em volta."
-          data-tilt>
-      </div>
-
-      <div class="scroll" data-menu="suave"><a href="#sobre">
-          <p> scroll down </p> <img src="./assets/scroll.png" alt="Setinha indicando para rolar a tela para baixo">
-        </a></div>
-    </section>
-    <section class="sobre-mim" id="sobre" data-anime="js-scroll">
-      <div class="sobre-mim__foto">
-        <img src="./assets/foto_rodrigo.jpg" alt="Uma selfie de Rodrigo" />
-      </div>
-      <div class="sobre-mim__descricao">
-        <h1>Sobre mim</h1>
-        <h2>São Paulo, São Paulo</h2>
-        <p>
-          Sou um desenvolvedor de software focado em resolver problemas complexos, transformando ideias em soluções de
-          alto impacto.<BR><BR>
-
-          Minha jornada começou com uma base técnica sólida na <B>ETEC São Paulo</B>, onde me formei <B>Técnico em
-            Desenvolvimento
-            de Sistemas</B> e <B>liderei</B> o desenvolvimento de um TCC que entregou uma solução de automação completa
-          para um
-          restaurante, gerenciando o projeto do conceito à implementação.<BR><BR>
-
-          Atualmente, cursando Sistemas de Informação no prestigiado <B>Instituto Federal de São Paulo (IFSP)</B>,
-          aprofundo
-          meus conhecimentos em desafios de engenharia. Meu projeto de iniciação científica, um sistema de renderização
-          VR
-          3D de alta performance, é a prova da minha capacidade de trabalhar com <B>arquitetura de software e
-            otimização</B> em
-          nível de sistema.<BR><BR>
-
-          Hoje, meu foco é aplicar toda essa experiência acumulada para construir sistemas de backend robustos e extrair
-          insights valiosos através da análise de dados com Python.
-        </p>
-        <div class="sobre-mim__descricao-buttons">
-          </a>
-          <a href="mailto:contato@rodrigocotrin.com?subject=Contato via Portfólio" target="_blank">
-            <div class="sobre-mim__descricao-buttons-email">
-              <img src="./assets/email.png" alt="" />
-              <p>Email</p>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="experiencia" id="experiencia" data-anime="js-scroll">
-    <h1>Principal Case de Engenharia</h1>
-    <br>
-    <div class="case-study__wrapper">
-        <div class="case-study__visual">
-            <!--<img src="./assets/placeholder_vr_gif.gif" alt="Demonstração da plataforma de acessibilidade imersiva em VR."/>-->
-        </div>
-        <div class="case-study__descricao">
-            <h2>Plataforma de Acessibilidade Imersiva: Trazendo Locais Históricos a Todos com VR</h2>
-            <p class="experiencia__descricao-local">
-                Projeto de Iniciação Científica (Bolsista) - Instituto Federal de São Paulo (IFSP)
-                <br>
-                <strong>ago de 2025 - o momento</strong>
-            </p>
-            
-            <p>
-                Liderando a pesquisa e o desenvolvimento de uma solução de Realidade Virtual (VR) com alto impacto social, este projeto tem a missão de quebrar barreiras. O objetivo é criar uma plataforma que possibilita a pessoas com deficiências físicas e/ou transtornos mentais explorar locais históricos de forma segura, imersiva e terapêutica.
-            </p>
-            
-            <br>
-            <p><strong>Desafios de Engenharia e Soluções Implementadas:</strong></p>
-            <ul>
-                <li><strong>Arquitetura da Experiência em C#/Unity:</strong> Desenvolvi uma arquitetura de software modular e escalável em C# para gerenciar toda a experiência do usuário, desde a navegação entre os cenários 360° até as mecânicas complexas do quiz interativo no Meta Quest 2.</li>
-                <li><strong>Otimização de Performance para Hardware Embarcado:</strong> O desafio crítico é garantir uma experiência fluida e sem "engasgos" (stuttering). Implementei técnicas de carregamento assíncrono de assets (panoramas em alta qualidade) e otimização de memória para manter uma alta e estável taxa de quadros, essencial para o conforto e acessibilidade do usuário em VR.</li>
-                <li><strong>Design de UI/UX Inclusivo e Acessível:</strong> Pesquisei e implementei interfaces e sistemas de interação (UI/UX) projetados especificamente para as necessidades do público-alvo, garantindo que a navegação seja intuitiva e livre de barreiras para pessoas com diferentes capacidades motoras e cognitivas.</li>
-                <li><strong>Documentação para Publicação Científica:</strong> Todo o desenvolvimento e os resultados da pesquisa estão sendo rigorosamente documentados, visando a submissão e publicação de artigos científicos, contribuindo com avanços para a comunidade acadêmica nas áreas de VR e acessibilidade.</li>
+    <header>
+        <nav data-menu="suave">
+            <a href="#home" class="logo">RC.</a>
+            <button data-menu="button" aria-controls="menu"></button>
+            <ul data-menu="list" id="menu">
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#autoridade">Competência</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="https://wa.me/5511988263659" target="_blank" style="color:var(--whatsapp-color)">Contato</a></li>
             </ul>
+        </nav>
+    </header>
 
-            <span class="case-study__tech">Tecnologias: C#, Unity Engine, Meta Quest 2, UI/UX Inclusivo, Git.</span>
-            
-            <a href="LINK_PARA_O_REPOSITORIO_OU_ARTIGO_DO_PROJETO" target="_blank" class="case-study__button">
-                <div class="projetos__card-button">
-                    <img src="./assets/github.png" alt="Github Logo">
-                    Repositório
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content hidden" data-anime="js-scroll">
+                <span class="hero-tag">Residente na Vila Nova Mazzei</span>
+                <h1>
+                    Transformo seu Negócio em <span class="highlight">Referência Digital</span>
+                </h1>
+                
+                <p style="min-height: 1.6em; font-weight: 600; color: var(--accent-color); margin-bottom: 10px;">
+                    <span class="principal__sentence"></span><span class="principal__input-cursor">|</span>
+                </p>
+
+                <p>
+                    Não sou agência. Sou estudante de engenharia de software do IFSP.
+                    Uso tecnologia de ponta para colocar sua empresa no topo do Google e automatizar seu atendimento.
+                </p>
+
+                <div class="cta-group">
+                    <a href="https://wa.me/5511988263659?text=Oi Rodrigo, vi seu site e quero modernizar minha empresa." target="_blank" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382C17.112 14.011 15.32 13.091 14.986 12.976C14.652 12.861 14.41 12.795 14.168 13.155C13.926 13.515 13.245 14.382 13.027 14.618C12.825 14.853 12.615 14.88 12.28 14.727C10.635 13.976 9.285 13.047 8.265 11.234C7.996 10.759 8.384 10.654 8.69 10.181C8.861 9.916 8.958 9.767 9.125 9.433C9.292 9.099 9.208 8.816 9.083 8.567C8.958 8.318 8.265 6.559 7.967 5.861C7.698 5.229 7.396 5.345 7.176 5.354C6.971 5.363 6.736 5.363 6.501 5.363C6.035 5.363 5.562 5.522 5.256 5.984C4.841 6.61 4 7.62 4 9.674C4 11.728 5.545 13.709 5.77 14.015C5.995 14.321 8.745 18.714 12.966 20.397C15.667 21.474 16.426 21.247 17.032 21.119C17.915 20.932 19.358 20.038 19.778 18.786C20.198 17.534 20.198 16.457 20.074 16.242C19.95 16.027 19.644 15.902 19.145 15.652L17.472 14.382Z" fill="white"/></svg>
+                        Agendar Consultoria
+                    </a>
+                    <a href="#portfolio" class="btn-secondary">Ver Projetos</a>
                 </div>
-            </a>
-        </div>
-    </div>
-</section>
 
-    <section class="projetos" id="projetos" data-anime="js-scroll">
-      <h1>Projetos</h1>
-      <div class="projetos__wrapper">
-        <section class="projetos__card">
-    <a href="https://cookflow-project.vercel.app" target="_blank">
-        <img src="/assets/projeto3.png" alt="Placeholder para o projeto CookFlow" class="projeto-img"/>
-    </a>
-    <h2>CookFlow: Plataforma de Receitas com Planejador Inteligente</h2>
-    <p>
-        Aplicação web full-stack (PERN Stack) que permite aos usuários gerenciar e compartilhar receitas. O diferencial é uma feature que gera uma lista de compras otimizada a partir da seleção de múltiplas receitas, consolidando ingredientes.
-    </p>
-    <span>Tecnologias: PostgreSQL, Express.js, React.js, Node.js, Tailwind CSS.</span>
-    <a href="https://cookflow-project.vercel.app" target="_blank">
-        <div class="projetos__card-button">
-            <img src="./assets/link.png" alt="Ícone de link">
-            Visualizar
-        </div>
-    </a>
-</section>
+                <div class="credentials-bar">
+                    <p class="credentials-title">Verificação Técnica:</p>
+                    <div class="credentials-links">
+                        <a href="https://www.linkedin.com/in/rodrigocotrin/" target="_blank" class="cred-link">
+                            <img src="assets/linkedin.png" alt="LinkedIn">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/RodrigoCotrin" target="_blank" class="cred-link">
+                            <img src="assets/github.png" alt="GitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-img hidden" data-anime="js-scroll" data-tilt data-tilt-glare data-tilt-max-glare="0.2">
+                <img src="./assets/img_main.svg" alt="Ilustração Desenvolvimento Web">
+            </div>
         </section>
-      </div>
-    </section>
+
+        <section id="solucoes" data-anime="js-scroll">
+            <div class="section-title">
+                <h2>O "Pack de Aceleração"</h2>
+                <p>Soluções de engenharia para problemas reais de vendas.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span style="font-size: 2rem;">📍</span>
+                    <h3>Domínio do Google</h3>
+                    <p>SEO Local avançado e Geo-Tagging. Faço sua empresa aparecer antes do concorrente quando alguém pesquisa no bairro.</p>
+                </div>
+                <div class="service-card">
+                    <span style="font-size: 2rem;">⚡</span>
+                    <h3>Sites de Alta Conversão</h3>
+                    <p>Páginas leves focadas em vendas. Cardápio digital, fotos otimizadas e carregamento instantâneo.</p>
+                </div>
+                <div class="service-card">
+                    <span style="font-size: 2rem;">🤖</span>
+                    <h3>Automação Inteligente</h3>
+                    <p>Robôs de atendimento no WhatsApp que filtram curiosos, tiram dúvidas e fecham pedidos 24h por dia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="autoridade" data-anime="js-scroll">
+            <div class="about-container">
+                <div class="about-img" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                    <img src="./assets/foto_rodrigo.jpg" alt="Rodrigo Cotrin">
+                </div>
+                <div class="about-text">
+                    <span class="hero-tag">Engenharia Real</span>
+                    <h2>Muito além do "Marketing".</h2>
+                    <p>
+                        Muitos vendem promessas. Eu vendo <strong>tecnologia</strong>.
+                        Sou estudante de <strong>Sistemas de Informação no IFSP</strong> e pesquisador bolsista.
+                        Enquanto atendo seu comércio, desenvolvo softwares de Realidade Virtual e Análise de Dados.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-group">
+                            <h4>Tecnologias que Domino</h4>
+                            <div class="tech-icons">
+                                <img src="https://skillicons.dev/icons?i=cs,python,js,ts,react,nodejs,mysql,postgres,unity,git,linux" alt="Tech Stack" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" data-anime="js-scroll">
+            <div class="section-title">
+                <h2>Capacidade de Entrega</h2>
+                <p>Projetos que provam minha competência técnica.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h3>✈️ Avant Travel</h3>
+                        <span style="background:rgba(34, 197, 94, 0.1); color:#22c55e; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:bold;">COMERCIAL</span>
+                    </div>
+                    <p>Site de agência de viagens focado em conversão visual e experiência do usuário. Exemplo de design que vende.</p>
+                    <a href="https://avant-project.vercel.app" target="_blank" class="cred-link" style="margin-top: 20px; color:var(--accent-color);">Ver Demo →</a>
+                </div>
+
+                <div class="service-card">
+                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h3>🕶️ Odisseia VR</h3>
+                        <span style="background:rgba(59, 130, 246, 0.1); color:#3b82f6; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:bold;">PESQUISA IFSP</span>
+                    </div>
+                    <p>Plataforma de acessibilidade em Realidade Virtual usando C# e Unity. Tecnologia complexa aplicada a problemas reais.</p>
+                    <a href="https://github.com/rodrigocotrin/odisseiavr-project" target="_blank" class="cred-link" style="margin-top: 20px; color:var(--accent-color);">Ver Código →</a>
+                </div>
+
+                <div class="service-card">
+                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h3>🍳 CookFlow</h3>
+                        <span style="background:rgba(249, 115, 22, 0.1); color:#f97316; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:bold;">SISTEMA</span>
+                    </div>
+                    <p>Sistema completo com banco de dados e login. Prova que sei lidar com dados sensíveis e lógica complexa.</p>
+                    <a href="https://cookflow-project.vercel.app" target="_blank" class="cred-link" style="margin-top: 20px; color:var(--accent-color);">Acessar Sistema →</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-      <p>© 2025 Rodrigo Cotrin</p>
+        <p>© 2025 Rodrigo Cotrin | Soluções em Tecnologia</p>
+        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">Vila Nova Mazzei • São Paulo</p>
     </footer>
-  </main>
 
-  <script src="/js/script.js" type="module"></script>
-  <script src="/js/modules/vanilla-tilt.min.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
-
 </html>

@@ -1,66 +1,140 @@
+/* --- MOBILE MENU: Clean & Premium --- */
+
+/* 1. Desktop: Esconde o botão */
 [data-menu="button"] {
     display: none;
 }
 
-@media (max-width: 880px) {
+/* 2. Mobile: Configuração Geral (Max-width 900px) */
+@media (max-width: 900px) {
+    
+    /* Ajuste do Nav para garantir alinhamento */
     nav {
-        padding: 0 5% !important;
+        padding: 15px 5% !important;
+        justify-content: space-between;
     }
 
+    /* --- O BOTÃO (HAMBURGUER) --- */
     [data-menu="button"] {
-        display: block;
-        background-color: #151515;
-        border: none;
-        border-top: 3px #8a2be2 solid;
-        padding: .8rem 1rem;
-        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none; /* REMOVIDA A BORDA FEIA */
+        padding: 10px;
         cursor: pointer;
-        position: relative;
-        z-index: 100;
+        z-index: 2000;
+        width: 48px; /* Área de toque maior */
+        height: 48px;
     }
 
+    /* Linha Central */
     [data-menu="button"]::before {
         content: '';
         display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background-color: #8a2be2;
-        transition: .3s transform;
+        width: 28px;
+        height: 3px; /* Linha mais grossa e visível */
+        background: #f8fafc; /* Branco puro para contraste */
+        border-radius: 2px;
+        box-shadow: 0 8px 0 #f8fafc, 0 -8px 0 #f8fafc; /* As outras 2 linhas */
+        transition: 0.3s ease-in-out;
     }
 
-    [data-menu="button"]::after {
+    [data-menu="button"]::after { display: none; }
+
+    /* --- ANIMAÇÃO DO ÍCONE (X) --- */
+    [data-menu="button"].active::before {
+        background: transparent; /* Linha central some */
+        box-shadow: none;
+        /* Truque para criar o X usando box-shadow seria complexo, vamos usar rotate simples */
+    }
+    
+    /* Recriando o X de forma limpa quando ativo */
+    [data-menu="button"].active::after {
+        display: block;
         content: '';
-        display: block;
         position: absolute;
-        bottom: 50%;
-        left: 0;
+        width: 28px;
         height: 3px;
-        width: 100%;
-        background-color: #8a2be2;
-        transition: .3s transform;
+        background: #3b82f6; /* Azul Tech no X */
+        transform: rotate(45deg);
+        border-radius: 2px;
     }
-
-    [data-menu="list"] {
-        display: none;
+    [data-menu="button"].active {
+        /* Cria a outra perna do X usando um pseudo-elemento no próprio botão se possível, 
+           mas aqui vamos usar um hack simples de border-top/bottom para facilitar ou ::before/::after.
+           
+           Vamos simplificar: O ::before vira uma perna, o ::after vira a outra.
+        */
+    }
+    
+    /* REFAZENDO A ANIMAÇÃO DO X PARA FICAR PERFEITA */
+    [data-menu="button"].active::before {
+        background: #3b82f6; /* Azul */
+        transform: rotate(-45deg);
+        box-shadow: none;
+        width: 28px;
+        height: 3px;
         position: absolute;
-        top: 0;
-        right: 1%;
-        box-shadow: 0 4px 4px rgba(0,0,0,.3);
-        background-color: #151515;
-        
-        padding: 82px 0 10px;
-        z-index: 50;
-        margin: 0;
-        font-family: "Inter", sans-serif;
     }
 
+    /* --- O MENU (LISTA) --- */
+    [data-menu="list"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza o texto */
+        justify-content: center; /* Centraliza na tela se for full screen */
+        position: fixed; /* Fixa na tela inteira */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0; /* Começa fechado */
+        background: rgba(15, 23, 42, 0.98); /* Azul Profundo Sólido */
+        backdrop-filter: blur(10px);
+        visibility: hidden;
+        overflow: hidden;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500; /* Fica abaixo do botão (z-2000) */
+        padding-top: 0;
+    }
+
+    /* Estado Aberto */
     [data-menu="list"].active {
-        display: block;
-        animation: show-down .3s forwards;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+        height: 100vh; /* Ocupa a tela toda (Estilo App) */
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Itens da Lista */
+    [data-menu="list"] li {
+        margin: 20px 0; /* Espaçamento generoso */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s;
+    }
+
+    /* Cascata de Entrada */
+    [data-menu="list"].active li { opacity: 1; transform: translateY(0); }
+    [data-menu="list"].active li:nth-child(1) { transition-delay: 0.1s; }
+    [data-menu="list"].active li:nth-child(2) { transition-delay: 0.2s; }
+    [data-menu="list"].active li:nth-child(3) { transition-delay: 0.3s; }
+    [data-menu="list"].active li:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Links */
+    [data-menu="list"] li a {
+        font-size: 1.5rem; /* Texto Grande */
+        color: #f8fafc;
+        font-weight: 700;
+        text-transform: none; /* Remove caixa alta forçada */
+        letter-spacing: -0.5px;
+    }
+    
+    [data-menu="list"] li a:hover {
+        color: #3b82f6;
+    }
+
+    /* Destaque para o Contato */
+    [data-menu="list"] li:last-child a {
+        color: #22c55e; /* Verde WhatsApp */
     }
 }
