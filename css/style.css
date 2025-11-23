@@ -12,6 +12,25 @@
     --gradient-text: linear-gradient(90deg, #3b82f6, #06b6d4);
 }
 
+/* --- CUSTOM SCROLLBAR (Estilo Big Tech) --- */
+::-webkit-scrollbar {
+    width: 8px; /* Largura fina e elegante */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color); /* Cor do fundo do site */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155; /* Cinza escuro discreto */
+    border-radius: 4px;
+    border: 2px solid var(--bg-color); /* Cria um respiro visual */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color); /* Fica azul quando passa o mouse */
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -181,4 +200,49 @@ footer { background: #0b1120; text-align: center; padding: 50px 10%; border-top:
     .credentials-links, .cta-group { justify-content: center; }
     .hero h1 { font-size: 2.2rem; }
     .tech-icons { text-align: center; }
+}
+
+/* --- CORREÇÃO DE OVERFLOW E LEIAUTE MOBILE --- */
+
+/* 1. Trava global de largura */
+html, body {
+    overflow-x: hidden; /* Corta qualquer coisa que tente sair da tela */
+    width: 100%;
+    position: relative;
+}
+
+/* 2. Impede que imagens (como as SkillIcons) estourem a tela */
+img, svg {
+    max-width: 100%; /* A imagem nunca pode ser maior que o pai */
+    height: auto; /* Mantém a proporção */
+}
+
+/* 3. Ajustes Específicos para Mobile (Max-width 480px) */
+@media (max-width: 480px) {
+    
+    /* Reduz padding lateral para ganhar espaço */
+    section, .hero, footer {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        overflow-x: hidden; /* Segurança extra */
+    }
+
+    /* Reduz o tamanho do Título Gigante para não vazar */
+    .hero h1 {
+        font-size: 2rem !important; /* Era 3.5rem ou 2.5rem */
+        word-wrap: break-word; /* Quebra palavras longas se necessário */
+    }
+
+    /* Ajuste dos Ícones de Tecnologia (SkillIcons) */
+    .tech-icons img {
+        height: auto !important; /* Deixa a altura flexível */
+        width: 100% !important; /* Ocupa a largura disponível */
+        max-width: 300px; /* Mas não deixa ficar gigante */
+    }
+    
+    /* Garante que os textos não fiquem colados na borda */
+    p {
+        max-width: 100%;
+        text-align: left; /* Ou center, dependendo do gosto, mas left é mais legível */
+    }
 }
