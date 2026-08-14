@@ -77,7 +77,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, background 0.2s ease;
 }
 
 ul {
@@ -101,14 +101,13 @@ header {
     -webkit-backdrop-filter: blur(14px);
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
-    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 8%;
+    padding: 0.9rem 8%;
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
@@ -121,6 +120,7 @@ nav {
     letter-spacing: -0.04em;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 
 .logo-dot {
@@ -130,7 +130,7 @@ nav {
 nav ul {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 nav ul li a {
@@ -138,7 +138,7 @@ nav ul li a {
     font-weight: 500;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    position: relative;
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
@@ -153,6 +153,8 @@ nav ul li a:hover {
     color: var(--text-primary) !important;
     font-weight: 600 !important;
     font-size: 0.85rem !important;
+    white-space: nowrap !important;
+    display: inline-block;
     transition: all 0.2s ease;
 }
 
@@ -167,14 +169,14 @@ main {
 }
 
 section {
-    padding: 100px 8%;
+    padding: 90px 8%;
     max-width: var(--container-max-width);
     margin: 0 auto;
     scroll-margin-top: 80px;
 }
 
 .section-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .section-category {
@@ -190,7 +192,7 @@ section {
 
 .section-header h2 {
     font-family: var(--font-title);
-    font-size: 2.25rem;
+    font-size: 2.15rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     color: var(--text-primary);
@@ -200,23 +202,23 @@ section {
 
 .section-header p {
     color: var(--text-secondary);
-    font-size: 1.05rem;
-    max-width: 620px;
+    font-size: 1.02rem;
+    max-width: 640px;
 }
 
 /* --- HERO SECTION --- */
 .hero {
-    padding: 150px 8% 90px;
+    padding: 130px 8% 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    min-height: 90vh;
+    gap: 48px;
+    min-height: 88vh;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 640px;
+    flex: 1 1 580px;
+    max-width: 660px;
 }
 
 .hero-badge {
@@ -225,12 +227,12 @@ section {
     gap: 8px;
     background: #121215;
     border: 1px solid var(--border-color);
-    padding: 6px 14px;
+    padding: 5px 14px;
     border-radius: 9999px;
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .status-indicator {
@@ -243,22 +245,22 @@ section {
 
 .hero-title {
     font-family: var(--font-title);
-    font-size: 3.6rem;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
     font-weight: 800;
     letter-spacing: -0.04em;
     color: var(--text-primary);
-    line-height: 1.08;
-    margin-bottom: 12px;
+    line-height: 1.1;
+    margin-bottom: 10px;
 }
 
 .hero-role-wrapper {
     font-family: var(--font-title);
-    font-size: 1.35rem;
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
     font-weight: 600;
     color: var(--accent-cyan);
     letter-spacing: -0.02em;
-    min-height: 1.8em;
-    margin-bottom: 20px;
+    min-height: 1.6em;
+    margin-bottom: 18px;
 }
 
 .principal__input-cursor {
@@ -275,9 +277,9 @@ section {
 
 .hero-description {
     color: var(--text-secondary);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 36px;
+    font-size: 1rem;
+    line-height: 1.68;
+    margin-bottom: 28px;
 }
 
 .hero-description strong {
@@ -289,23 +291,24 @@ section {
 .cta-group {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .btn-primary {
     background: #f4f4f5;
     color: #09090b;
-    padding: 12px 24px;
+    padding: 11px 22px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     border: 1px solid #f4f4f5;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -317,15 +320,16 @@ section {
 .btn-secondary {
     background: #18181b;
     color: var(--text-primary);
-    padding: 12px 22px;
+    padding: 11px 20px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     border: 1px solid var(--border-color);
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -337,15 +341,16 @@ section {
 .btn-ghost {
     background: transparent;
     color: var(--text-secondary);
-    padding: 12px 18px;
+    padding: 11px 16px;
     border-radius: 8px;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     border: 1px solid transparent;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .btn-ghost:hover {
@@ -356,7 +361,7 @@ section {
 
 /* --- CREDENTIALS / SOCIAL LINKS --- */
 .credentials-bar {
-    padding-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -366,13 +371,13 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .credentials-links {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -404,14 +409,15 @@ section {
 
 /* --- HERO VISUAL / PROFILE CARD --- */
 .hero-visual {
-    flex: 0 0 340px;
+    flex: 0 0 320px;
+    max-width: 320px;
 }
 
 .profile-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 18px;
+    padding: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: border-color 0.3s ease;
 }
@@ -434,7 +440,7 @@ section {
     object-fit: cover;
     object-position: center top;
     filter: contrast(102%);
-    transition: transform 0.4s ease, filter 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .profile-card:hover .profile-img {
@@ -442,7 +448,7 @@ section {
 }
 
 .profile-details {
-    padding: 16px 6px 4px;
+    padding: 14px 4px 2px;
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -464,7 +470,7 @@ section {
 .profile-loc {
     font-size: 0.8rem;
     color: var(--text-muted);
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 /* --- TIMELINE (EXPERIÊNCIA) --- */
@@ -477,7 +483,7 @@ section {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 }
 
 .timeline-item:last-child {
@@ -500,7 +506,7 @@ section {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 28px;
+    padding: 26px;
     transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
@@ -520,7 +526,7 @@ section {
 
 .timeline-role {
     font-family: var(--font-title);
-    font-size: 1.2rem;
+    font-size: 1.18rem;
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.02em;
@@ -597,7 +603,7 @@ section {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 30px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
@@ -660,7 +666,7 @@ section {
 }
 
 .project-action {
-    margin-top: 22px;
+    margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid var(--border-color);
 }
@@ -698,7 +704,7 @@ section {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 28px;
+    padding: 26px;
     transition: border-color 0.25s ease;
 }
 
@@ -771,69 +777,6 @@ section {
     font-weight: 600;
 }
 
-/* --- PUBLICAÇÃO CIENTÍFICA --- */
-.publication-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 32px;
-    margin-top: 30px;
-    transition: border-color 0.25s ease;
-}
-
-.publication-card:hover {
-    border-color: var(--border-hover);
-}
-
-.publication-badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #a78bfa;
-    background: rgba(167, 139, 250, 0.08);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 16px;
-}
-
-.publication-title {
-    font-family: var(--font-title);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.4;
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
-}
-
-.publication-desc {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.65;
-    margin-bottom: 20px;
-}
-
-.publication-desc strong {
-    color: var(--text-primary);
-}
-
-.publication-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
-}
-
-.publication-meta strong {
-    color: var(--text-primary);
-}
-
 /* --- IDIOMAS --- */
 .languages-banner {
     display: flex;
@@ -885,7 +828,7 @@ section {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 28px;
+    padding: 26px;
     transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
@@ -927,6 +870,69 @@ section {
     color: var(--text-muted);
 }
 
+/* --- PUBLICAÇÃO CIENTÍFICA --- */
+.publication-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 30px;
+    margin-top: 30px;
+    transition: border-color 0.25s ease;
+}
+
+.publication-card:hover {
+    border-color: var(--border-hover);
+}
+
+.publication-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #a78bfa;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.publication-title {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+}
+
+.publication-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.publication-desc strong {
+    color: var(--text-primary);
+}
+
+.publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+}
+
+.publication-meta strong {
+    color: var(--text-primary);
+}
+
 /* --- CONTATO --- */
 .contact-grid {
     display: grid;
@@ -939,7 +945,7 @@ section {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 24px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1048,11 +1054,15 @@ footer {
 
 /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
 @media (max-width: 992px) {
+    nav {
+        padding: 0.8rem 6%;
+    }
+
     .hero {
         flex-direction: column-reverse;
-        padding-top: 130px;
+        padding-top: 120px;
         text-align: left;
-        gap: 40px;
+        gap: 36px;
     }
 
     .hero-content {
@@ -1062,33 +1072,21 @@ footer {
     .hero-visual {
         flex: 0 0 auto;
         width: 100%;
-        max-width: 280px;
-    }
-
-    .hero-title {
-        font-size: 2.8rem;
+        max-width: 260px;
     }
 }
 
 @media (max-width: 768px) {
     section {
-        padding: 70px 6%;
+        padding: 60px 6%;
     }
 
     .hero {
-        padding: 110px 6% 60px;
-    }
-
-    .hero-title {
-        font-size: 2.3rem;
-    }
-
-    .hero-role-wrapper {
-        font-size: 1.15rem;
+        padding: 100px 6% 50px;
     }
 
     .section-header h2 {
-        font-size: 1.85rem;
+        font-size: 1.75rem;
     }
 
     .timeline {
@@ -1116,10 +1114,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
     .cta-group {
         flex-direction: column;
         align-items: stretch;
@@ -1130,7 +1124,7 @@ footer {
         width: 100%;
     }
 
-    .projects-grid, .skills-grid, .contact-grid {
+    .projects-grid, .skills-grid, .education-grid, .contact-grid {
         grid-template-columns: 1fr;
     }
 }
