@@ -1,4 +1,4 @@
-/* --- MOBILE MENU: Clean & Premium --- */
+/* --- MOBILE MENU: Clean & Minimalist (Zinc Theme) --- */
 
 /* 1. Desktop: Esconde o botão */
 [data-menu="button"] {
@@ -8,9 +8,8 @@
 /* 2. Mobile: Configuração Geral (Max-width 900px) */
 @media (max-width: 900px) {
     
-    /* Ajuste do Nav para garantir alinhamento */
     nav {
-        padding: 15px 5% !important;
+        padding: 1rem 6% !important;
         justify-content: space-between;
     }
 
@@ -20,121 +19,123 @@
         align-items: center;
         justify-content: center;
         background: transparent;
-        border: none; /* REMOVIDA A BORDA FEIA */
+        border: none;
         padding: 10px;
         cursor: pointer;
         z-index: 2000;
-        width: 48px; /* Área de toque maior */
-        height: 48px;
+        width: 44px;
+        height: 44px;
+        position: relative;
     }
 
     /* Linha Central */
     [data-menu="button"]::before {
         content: '';
         display: block;
-        width: 28px;
-        height: 3px; /* Linha mais grossa e visível */
-        background: #f8fafc; /* Branco puro para contraste */
+        width: 24px;
+        height: 2px;
+        background: #f4f4f5;
         border-radius: 2px;
-        box-shadow: 0 8px 0 #f8fafc, 0 -8px 0 #f8fafc; /* As outras 2 linhas */
-        transition: 0.3s ease-in-out;
+        box-shadow: 0 7px 0 #f4f4f5, 0 -7px 0 #f4f4f5;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    [data-menu="button"]::after { display: none; }
+    [data-menu="button"]::after {
+        display: none;
+    }
 
     /* --- ANIMAÇÃO DO ÍCONE (X) --- */
     [data-menu="button"].active::before {
-        background: transparent; /* Linha central some */
+        background: #38bdf8;
+        transform: rotate(-45deg);
         box-shadow: none;
-        /* Truque para criar o X usando box-shadow seria complexo, vamos usar rotate simples */
+        width: 24px;
+        height: 2px;
+        position: absolute;
     }
     
-    /* Recriando o X de forma limpa quando ativo */
     [data-menu="button"].active::after {
         display: block;
         content: '';
         position: absolute;
-        width: 28px;
-        height: 3px;
-        background: #3b82f6; /* Azul Tech no X */
+        width: 24px;
+        height: 2px;
+        background: #38bdf8;
         transform: rotate(45deg);
         border-radius: 2px;
     }
-    [data-menu="button"].active {
-        /* Cria a outra perna do X usando um pseudo-elemento no próprio botão se possível, 
-           mas aqui vamos usar um hack simples de border-top/bottom para facilitar ou ::before/::after.
-           
-           Vamos simplificar: O ::before vira uma perna, o ::after vira a outra.
-        */
-    }
-    
-    /* REFAZENDO A ANIMAÇÃO DO X PARA FICAR PERFEITA */
-    [data-menu="button"].active::before {
-        background: #3b82f6; /* Azul */
-        transform: rotate(-45deg);
-        box-shadow: none;
-        width: 28px;
-        height: 3px;
-        position: absolute;
-    }
 
-    /* --- O MENU (LISTA) --- */
+    /* --- O MENU (LISTA / DRAWER) --- */
     [data-menu="list"] {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centraliza o texto */
-        justify-content: center; /* Centraliza na tela se for full screen */
-        position: fixed; /* Fixa na tela inteira */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 0; /* Começa fechado */
-        background: rgba(15, 23, 42, 0.98); /* Azul Profundo Sólido */
-        backdrop-filter: blur(10px);
+        height: 0;
+        background: rgba(9, 9, 11, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         visibility: hidden;
         overflow: hidden;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1500; /* Fica abaixo do botão (z-2000) */
+        transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500;
         padding-top: 0;
+        gap: 0;
     }
 
     /* Estado Aberto */
     [data-menu="list"].active {
-        height: 100vh; /* Ocupa a tela toda (Estilo App) */
+        height: 100vh;
         visibility: visible;
         opacity: 1;
     }
 
     /* Itens da Lista */
     [data-menu="list"] li {
-        margin: 20px 0; /* Espaçamento generoso */
+        margin: 14px 0;
         opacity: 0;
-        transform: translateY(20px);
-        transition: 0.4s;
+        transform: translateY(16px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     /* Cascata de Entrada */
-    [data-menu="list"].active li { opacity: 1; transform: translateY(0); }
-    [data-menu="list"].active li:nth-child(1) { transition-delay: 0.1s; }
-    [data-menu="list"].active li:nth-child(2) { transition-delay: 0.2s; }
-    [data-menu="list"].active li:nth-child(3) { transition-delay: 0.3s; }
-    [data-menu="list"].active li:nth-child(4) { transition-delay: 0.4s; }
+    [data-menu="list"].active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    [data-menu="list"].active li:nth-child(1) { transition-delay: 0.05s; }
+    [data-menu="list"].active li:nth-child(2) { transition-delay: 0.1s; }
+    [data-menu="list"].active li:nth-child(3) { transition-delay: 0.15s; }
+    [data-menu="list"].active li:nth-child(4) { transition-delay: 0.2s; }
+    [data-menu="list"].active li:nth-child(5) { transition-delay: 0.25s; }
+    [data-menu="list"].active li:nth-child(6) { transition-delay: 0.3s; }
 
     /* Links */
     [data-menu="list"] li a {
-        font-size: 1.5rem; /* Texto Grande */
-        color: #f8fafc;
+        font-family: var(--font-title);
+        font-size: 1.4rem;
+        color: #f4f4f5;
         font-weight: 700;
-        text-transform: none; /* Remove caixa alta forçada */
-        letter-spacing: -0.5px;
+        letter-spacing: -0.02em;
+        padding: 6px 12px;
     }
     
     [data-menu="list"] li a:hover {
-        color: #3b82f6;
+        color: #38bdf8;
     }
 
-    /* Destaque para o Contato */
-    [data-menu="list"] li:last-child a {
-        color: #22c55e; /* Verde WhatsApp */
+    [data-menu="list"] li a.nav-cv-btn {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 1.1rem !important;
+        padding: 10px 24px;
+        background: #18181b;
+        border: 1px solid #27272a;
+        color: #f4f4f5 !important;
     }
 }

@@ -3,12 +3,12 @@ export default function initTyping() {
 
   if (!sentenceElement) return;
 
-  // MUDANÇA ESTRATÉGICA: Termos que o cliente busca
+  // Sentenças profissionais atualizadas para Dados, IA & Arquitetura de APIs
   const roles = [
-    "Especialista em Google Meu Negócio",
-    "Automação de Vendas no WhatsApp",
-    "Criação de Sites de Alta Conversão",
-    "Engenharia de Software Aplicada"
+    "Analista de Dados & Inteligência Artificial",
+    "Engenharia de Dados & Pipelines Analíticos",
+    "Integração de LLMs & IA Generativa",
+    "Arquitetura de APIs RESTful & Microsserviços"
   ];
   
   let roleIndex = 0;

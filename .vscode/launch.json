@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Zen Browser",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}",
+            "firefoxExecutable": "C:\\Program Files\\Zen Browser\\zen.exe"
+        }
+    ]
+}
